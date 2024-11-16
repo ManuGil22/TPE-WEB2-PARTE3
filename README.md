@@ -33,6 +33,29 @@ Listado de parámetros opcionales:
 
 - **page**: Este campo permite indicar el número de página del listado de elementos que queremos obtener. Por defecto su valor es 1.
 
+#### Ejemplos de uso
+Ordenamiento por campo país de forma descendente:
+```
+/api/trips?orderBy=pais&order=DESC
+```
+
+Ordenamiento por campo ciudad_destino de forma ascendente (por defecto es ASC por lo que no es necesario hacer uso del parámetro order):
+```
+/api/trips?orderBy=ciudad_destino
+/api/trips?orderBy=ciudad_destino&order=ASC
+```
+
+Primeros 5 elementos de la colección (el valor de page por defecto es 1 por lo que no es necesario hacer uso del mismo para pedir la primera página):
+```
+/api/trips?limit=5
+/api/trips?limit=5&page=1
+```
+
+Para obtener la segunda página, utilizando un límite de 5 elementos por cada una:
+```
+/api/trips?limit=5&page=2
+```
+
 ### POST /trips
 
 Permite agregar un viaje nuevo.
